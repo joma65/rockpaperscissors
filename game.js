@@ -1,12 +1,16 @@
-const choices = ["rock", "paper", "scissors"];
-$(".bottomContainer").hide();
+const CHOICES = ["rock", "paper", "scissors"];
+
 let playerInput = "";
 let computerChoice = "";
 let playerScore = 0;
 let computerScore = 0;
 let started = false;
 
-$("img").on("click", function () {
+// Hides Computer Choice and Score until game is started
+$(".bottomContainer").hide();
+
+// Listen for player input
+$(".choices img").on("click", function () {
 	playerInput = $(this).attr("id");
 	$(this).fadeOut(100).fadeIn(100);
 	game(playerInput);
@@ -14,10 +18,12 @@ $("img").on("click", function () {
 
 $("#reset").on("click", reset);
 
-// Generate computer choice from Rock, Paper or Scissors
 function getComputerChoice() {
-	computerChoice = choices[Math.floor(Math.random() * choices.length)];
+	// Generate computer choice from Rock, Paper or Scissors
+	computerChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)];
+	// Display computer choice in image
 	$("#computerChoice").attr("src", `images/${computerChoice}.png`);
+	// Hide ? and show computer choice or continue if already hidden
     if (started === false) {
         started = true;
         $("#start").hide();
@@ -26,7 +32,7 @@ function getComputerChoice() {
 	return computerChoice;
 }
 
-// Take player input and evaluate against computer choice following RPS rules
+// Take player input and evaluate against computer choice following Rock Paper Scissors rules
 function playRound(playerInput) {
 	computerChoice = getComputerChoice();
 	if (playerInput === computerChoice) {
@@ -42,7 +48,7 @@ function playRound(playerInput) {
 	}
 }
 
-// Play 5 rounds of RPS, declare winner
+// Play rounds of RPS, update score or declare a tie
 function game(playerInput) {
 	let round = playRound(playerInput);
 
@@ -56,7 +62,7 @@ function game(playerInput) {
         $(".score").text("Tie round, choose again!");
     }
 }
-
+// Reset game state to default
 function reset() {
 	playerInput = "";
 	computerChoice = "";
