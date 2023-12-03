@@ -9,18 +9,25 @@
 	<body>
 		<div class="title"><h1>Rock, Paper, Scissors</h1></div>
 		<div class="game">
-            <h2>Player Choices</h2>
+			<h2>Player Choices</h2>
 			<div class="choices">
-				<img src="rock.png" id="rock"/>
-				<img src="paper.png" id="paper"/>
-				<img src="scissors.png" id="scissors"/>
+				<img src="images/rock.png" id="rock" />
+				<img src="images/paper.png" id="paper" />
+				<img src="images/scissors.png" id="scissors" />
 			</div>
-            <h2>Computer Choice</h2>
-            <div class="computerChoice"><img src="" id="computerChoice"/></div>
-		    <div class="score">Click an image to start</div>
+			<div class="container">
+				<h2>Computer Choice</h2>
+				<span id="start">❓</span>
+				<div class="bottomContainer">
+					<div>
+						<img src="images/paper.png" id="computerChoice" />
+					</div>
+					<div class="score"></div>
+				</div>
+			</div>
 		</div>
-        <button id="reset">Reset</button>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<button id="reset">Reset</button>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="game.js"></script>
 	</body>
 </html>

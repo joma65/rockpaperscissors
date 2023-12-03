@@ -8,10 +8,20 @@ body {
 }
 
 .choices {
+    display: flex;
     flex-direction: row;
-    ;
+    gap: 20px;
 }
 
-button {
+button, .score, #start {
     margin-top: 20px;
+}
+
+img {
+    max-width: 50px;
+    max-height: 75px;
+}
+
+#start {
+    font-size: 48px;
 }
