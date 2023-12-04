@@ -5,12 +5,25 @@ body {
     justify-content: center;
     text-align: center;
     background-color:cornflowerblue;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Eldebaran Expanded', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 5px;
 }
 
 .choices {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 50px;
+    cursor: pointer;
+}
+
+.choices img:hover {
+    transform: scale(1.2);
 }
 
 button, .score, #start {
@@ -18,10 +31,10 @@ button, .score, #start {
 }
 
 img {
-    max-width: 50px;
-    max-height: 75px;
+    max-width: 75px;
+    max-height: 100px;
 }
 
 #start {
-    font-size: 48px;
+    font-size: 64px;
 }
